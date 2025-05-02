@@ -1,62 +1,99 @@
-📩 Spam Message Classifier using Machine Learning
-This project is a spam message classifier that uses TF-IDF vectorization and a Multinomial Naïve Bayes model. It also uses GridSearchCV to tune hyperparameters and improve accuracy. The classifier predicts whether a given SMS/text message is spam or ham (not spam).
+📩 Spam Message Classifier
+This project is a Spam Message Classifier that uses Machine Learning techniques to predict whether a given SMS or text message is SPAM or HAM (not spam). It includes a Streamlit web application for real-time message prediction and also supports command-line usage.
 
-🚀 Features
-Preprocessing of real-world SMS data
+🔍 Overview
+✅ Text preprocessing of real-world SMS data
 
-TF-IDF vectorizer with unigrams and bigrams
+✳️ TF-IDF vectorization with unigrams and bigrams
 
-Hyperparameter tuning using GridSearchCV
+🤖 Multinomial Naive Bayes classifier
 
-Model evaluation: accuracy, classification report, and confusion matrix
+🔧 Hyperparameter tuning using GridSearchCV
 
-Real-time message prediction via console input
+📈 Model evaluation using accuracy, precision, recall, F1-score, and confusion matrix
 
-📁 Dataset
-Dataset used: mail_data.csv
-The dataset contains two columns:
+🌐 Web app using Streamlit for easy use
 
-Label: spam or ham
+📂 Dataset
+The dataset used is mail_data.csv and contains the following columns:
 
-Message: The actual SMS/text message content
+Label: The message type (either ham or spam)
 
-🛠️ Requirements
-Install required packages:
-
-bash
-Copy
-Edit
-pip install pandas numpy matplotlib seaborn scikit-learn
-▶️ How to Run
-bash
-Copy
-Edit
-python app.py
-Then type a message when prompted to check if it's SPAM or HAM. Type exit to quit.
+Message: The text content of the message
 
 🧠 Model Details
-Vectorizer: TfidfVectorizer (with stopwords removal and bigram support)
+Vectorizer: TfidfVectorizer
+
+Stopword removal
+
+N-gram range: (1, 2)
 
 Classifier: MultinomialNB
 
-Tuning: GridSearchCV (alpha values: 0.1, 0.5, 1.0)
+Hyperparameter Tuning: GridSearchCV
 
-Train/Test Split: 80/20 with stratification
+Alpha values: [0.1, 0.5, 1.0]
 
-📊 Example Output
-plaintext
-Copy
-Edit
-Model Accuracy: 0.98
+Train/Test Split: 80% training, 20% testing with stratification
 
-Classification Report:
+📊 Performance
+Evaluation Metrics:
+Accuracy : 0.99
+Precision: 0.99
+Recall   : 0.91
+F1-score : 0.95
+
+Detailed Classification Report:
               precision    recall  f1-score   support
 
-         ham       0.98      1.00      0.99       965
-        spam       0.99      0.90      0.94       150
+         Ham       0.99      1.00      0.99       966
+        Spam       0.99      0.91      0.95       149
 
-    accuracy                           0.98      1115
-📧 Contact
-For any queries, suggestions, or collaborations, feel free to reach out:
+    accuracy                           0.99      1115
+   macro avg       0.99      0.96      0.97      1115
+weighted avg       0.99      0.99      0.99      1115
 
-Email: prabhunandan016@gmail.com
+
+🚀 Getting Started
+Clone the Repository
+Start by cloning the repository to your local machine.
+
+Install Dependencies
+To run the project, you need to install the required libraries. These can be installed via the following command:
+
+Install Python dependencies:
+Install all the required dependencies manually by using a package manager like pip. You will need the following packages:
+
+pandas
+
+numpy
+
+matplotlib
+
+seaborn
+
+scikit-learn
+
+streamlit
+
+Run the App
+Web Interface (Recommended)
+To start the Streamlit app and interact with the spam message classifier, you can run the application via the Streamlit interface.
+
+Console Mode
+You can also interact with the model using the command-line interface by running the provided Python script.
+
+📎 Project Structure
+bash
+Copy
+Edit
+├── app.py                # Streamlit app
+├── spam_classifier.py    # Console-based interface
+├── mail_data.csv         # Dataset
+├── README.md             # Project documentation
+
+💬 Contact
+Developer: Prabhunandan
+📧 Email: prabhunandan016@gmail.com
+
+Feel free to reach out for feedback, suggestions, or collaboration!
